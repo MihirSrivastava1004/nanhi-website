@@ -1,0 +1,36 @@
+.Header{
+  height: 40px;
+  float: left;
+}
+.navigation{
+  display: grid;
+  grid-template-columns: 80px 110px 100px 100px;
+  justify content: start;
+  align content: end;
+  grid-column-gap: 2px;
+  grid-row-gap: 20px;
+  background-color: yellow;
+}
+.overall{
+  display: grid;
+  justify-content: center;
+  grid-template-rows: auto;
+  grid-template-columns: auto;
+}
+body{
+  background-color: steelblue;
+  font-family: "Loto", sans-serif;
+}
+.button2{
+  padding: 2px 3px;
+  font-weight: 600;
+  font-size: 15px;
+  color: black;
+
+
+}
+.display1{
+  display: grid;
+  justify-content: center;
+  background-color: red;
+}
