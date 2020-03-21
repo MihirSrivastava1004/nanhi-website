@@ -1,7 +1,7 @@
 <?php
-  if(isset($_POST['search'])){
-    $ValueToSearch = $_POST['ValueToSearch'];
-    $query = "SELECT * FROM users WHERE CONCAT('idUsers', 'uidusers') LIKE '%".$ValueToSearch."%'";
+  if(isset($_GET['search'])){
+    $valueToSearch = $_GET['ValueToSearch'];
+    $query = "SELECT * FROM users WHERE CONCAT(idUsers, uidusers) LIKE '%".$valueToSearch."%'";
     $search_result = filterTable($query);
   }
   else {
@@ -9,7 +9,7 @@
     $search_result = filterTable($query);
   }
   function filterTable($query){
-    include "includes/dbh.inc.php";
+    $con = mysqli_connect("localhost", "root", "", "mihir");
     $filter_Result = mysqli_query($con, $query);
     return $filter_Result;
   }
@@ -26,7 +26,7 @@
     <title></title>
   </head>
   <body>
-    <form action=<?php echo $_SERVER['PHP_SELF'] ?> method="post">
+    <form action="data.php" method="get">
       <input type="text" name="ValueToSearch" placeholder="Value to search"><br><br>
       <input type="submit" name="search" value="Filter"><br><br>
       <table class="table">
